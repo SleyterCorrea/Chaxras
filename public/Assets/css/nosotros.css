@@ -1,0 +1,268 @@
+:root {
+        --verde-principal: #00695c;
+        --gris-claro: #f5f5f5;
+        --gris-medio: #e0e0e0;
+        --negro: #212121;
+        --blanco: #ffffff;
+        --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
+        --sombra-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+        --border-radius: 12px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: 'Playfair Display', serif;
+        background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 50%, #a7ffeb 100%);
+        color: var(--negro);
+    }
+    
+    /* VIDEO */
+    .nosotros-video {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .nosotros-video video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    .nosotros-video::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(1.5px);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .texto-nosotros-video {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        padding-top: 30vh;
+        padding-bottom: 40px;
+        background: transparent;
+    }
+    
+    .texto-nosotros-video h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeSlideUp 1.2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+    
+    .texto-nosotros-video p {
+        font-size: 1.4rem;
+        max-width: 800px;
+        margin: auto;
+        padding: 0 20px;
+        opacity: 0;
+        animation: fadeSlideUp 1.2s ease-out forwards;
+        animation-delay: 0.6s;
+    }
+    
+    @keyframes fadeSlideUp {
+        0% {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+    
+    /* FLECHA */
+    .scroll-flecha {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        animation: bounce 2s infinite;
+    }
+    
+    .scroll-flecha svg {
+        width: 40px;
+        height: 40px;
+        fill: white;
+        transition: fill 0.3s ease;
+    }
+    
+    .scroll-flecha:hover svg {
+        fill: var(--verde-principal);
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(10px); }
+    }
+    
+    /* CONTENIDO PRINCIPAL */
+    .nosotros-seccion {
+        padding: 80px 0;
+        width: 100%;
+    }
+    
+    .bloque {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 600px;
+        padding: 40px 5%;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .bloque.reverse {
+        flex-direction: row-reverse;
+    }
+    
+    .bloque-texto, .bloque-imagen {
+        flex: 1 1 500px;
+    }
+    
+    .bloque-texto {
+        padding: 20px;
+    }
+    
+    .bloque-texto h2 {
+        color: var(--verde-principal);
+        font-size: 2.4rem; 
+        margin-bottom: 16px;
+    }
+    
+    .bloque-texto p {
+        font-size: 1.2rem; 
+        line-height: 1.9;  
+    }
+    /*    */
+    .bloque-imagen img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        box-shadow: var(--sombra);
+    }
+    
+    /* Separadores */
+    .separador {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, transparent, var(--verde-principal), transparent);
+        margin: 60px auto;
+        width: 80%;
+        opacity: 0.6;
+    }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+        .bloque {
+        flex-direction: column;
+        padding: 20px;
+        }
+    
+        .bloque-texto h2 {
+        font-size: 2.4rem;
+        }
+    
+        .bloque-texto p {
+        font-size: 1.2rem;
+        }
+    
+        .texto-nosotros-video h1 {
+        font-size: 2.5rem;
+        }
+    
+        .texto-nosotros-video p {
+        font-size: 1.2rem;
+        }
+    }
+    
+    /* PROMOCIONES */
+    .promociones-seccion {
+        background: transparent;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .contenedor-promociones {
+        max-width: 900px;
+        margin: auto;
+        background: linear-gradient(145deg, #e0f2f1, #b2dfdb);
+        border-radius: var(--border-radius);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        padding: 50px 40px;
+        border: 1px solid rgba(0, 105, 92, 0.15);
+        transition: var(--transition);
+    }
+    
+    .contenedor-promociones:hover {
+        box-shadow: var(--sombra-hover);
+        transform: translateY(-4px);
+    }
+    
+    .contenedor-promociones h2 {
+        font-size: 2.8rem;
+        color: var(--verde-principal);
+        margin-bottom: 25px;
+    }
+    
+    .contenedor-promociones ul {
+        list-style: none;
+        font-size: 1.5rem;
+        color: #2b2b2b;
+        text-align: left;
+        margin-bottom: 30px;
+        line-height: 1.8;
+    }
+    
+    .contenedor-promociones ul li {
+        margin-bottom: 12px;
+        padding-left: 28px;
+        position: relative;
+    }
+    
+    .contenedor-promociones ul li::before {
+        content: "★";
+        position: absolute;
+        left: 0;
+        color: #009688;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    .btn-promociones {
+        display: inline-block;
+        padding: 14px 32px;
+        background-color: #00796b;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(0, 105, 92, 0.3);
+    }
+    
+    .btn-promociones:hover {
+        background-color: #004d40;
+        transform: scale(1.05);
+    }

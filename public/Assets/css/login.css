@@ -1,0 +1,217 @@
+.main-login {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    max-width: auto;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.section-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    padding: 50px;
+    background-color: #fffafa;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000000;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+form {
+    width: 100%;
+    display: none;
+}
+
+form.active {
+    display: block;
+}
+
+h2 {
+    color: #00695c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.icon-field {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #00695c;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #00695c;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #02423b;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #00695c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #02423b;
+}
+
+.section-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #00695c;
+}
+
+.link-register,
+.link-login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.link-register a,
+.link-login a {
+    color: #00695c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-register a:hover,
+.link-login a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo general para el botón de Google */
+.btn-google {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-google:hover {
+    transform: scale(1.05);
+}
+
+.btn-google img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsividad */
+@media (max-width: 480px) {
+    .section-auth {
+        padding: 10px;
+    }
+
+    input {
+        padding: 10px 10px 10px 35px;
+    }
+
+    .icon-field {
+        left: 5px;
+    }
+}
+
+/* Efectos de transición */
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-out-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left 0.5s forwards;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.5s forwards;
+}
+
+.animate-slide-out-left {
+    animation: slide-out-left 0.5s forwards;
+}
+
+.animate-slide-out-right {
+    animation: slide-out-right 0.5s forwards;
+}

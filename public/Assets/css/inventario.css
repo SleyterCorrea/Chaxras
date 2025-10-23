@@ -1,0 +1,134 @@
+.contenedor {
+    margin-left: 270px;
+    padding: 80px 30px;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+.titulo {
+    font-size: 28px;
+    color: #104031;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.btn.crear {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+.btn.crear:hover { background: #1e7e34; }
+
+.tabla-inventario {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.tabla-inventario th, .tabla-inventario td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.tabla-inventario th {
+    background: #104031;
+    color: white;
+    font-size: 14px;
+}
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+.badge-activo { background: #28a745; color: white; }
+.badge-inactivo { background: #dc3545; color: white; }
+.badge-entrada { background: #17a2b8; color: white; }
+.badge-salida { background: #ffc107; color: #333; }
+
+.mensaje-alerta {
+    background: #fff3cd;
+    color: #856404;
+    padding: 12px;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+/* ================= NUEVO FORM PARA CREAR / EDITAR INSUMO ================= */
+.contenedor-inventario {
+    margin-left: 270px;
+    padding: 60px 30px;
+    background: #f5f7fa;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+.contenedor-inventario h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #104031;
+}
+.formulario-inventario {
+    background: #fff;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.formulario-inventario label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.formulario-inventario input,
+.formulario-inventario select,
+.formulario-inventario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.formulario-inventario textarea {
+    resize: vertical;
+}
+.btn-guardar {
+    background: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-guardar:hover {
+    background: #1e7e34;
+}
+
+.btn-volver {
+    display: inline-block;
+    background: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+.btn-volver:hover {
+    background: #5a6268;
+}

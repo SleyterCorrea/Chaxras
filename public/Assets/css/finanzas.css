@@ -1,0 +1,105 @@
+.finanzas-wrapper {
+    padding: 2rem;
+    background: #f9f9f9;
+    min-height: 100vh;
+    margin-left: 284px;
+}
+
+.titulo-finanzas {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2d3436;
+}
+
+.resumen-finanzas {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card.ingreso { border-left: 6px solid #00b894; }
+.card.egreso  { border-left: 6px solid #d63031; }
+.card.balance.positivo { border-left: 6px solid #0984e3; }
+.card.balance.negativo { border-left: 6px solid #e17055; }
+
+.acciones-seccion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-success { background-color: #00b894; color: #fff; }
+.btn-success:hover { background-color: #009e7f; transform: scale(1.02); }
+
+.btn-danger { background-color: #d63031; color: #fff; }
+.btn-danger:hover { background-color: #c0392b; transform: scale(1.02); }
+
+.btn-exportar { background-color: #0984e3; color: white; }
+.btn-exportar:hover { background-color: #086dd3; transform: scale(1.02); }
+
+.btn-filtrar {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.filtro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.tabla-finanzas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-finanzas th, .tabla-finanzas td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabla-finanzas tr:hover {
+    background-color: #f1f1f1;
+}

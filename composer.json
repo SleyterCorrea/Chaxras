@@ -1,0 +1,15 @@
+{
+  "name": "chxcras/app",
+  "description": "Sistema para restaurante Chxcras",
+  "type": "project",
+  "require": {
+    "google/apiclient": "^2.0",
+    "phpmailer/phpmailer": "^6.10",
+    "mercadopago/dx-php": "3.5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

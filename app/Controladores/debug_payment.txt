@@ -1,0 +1,21 @@
+Array
+(
+    [transaction_amount] => 50
+    [token] => cbce34ca52be6a7265457551ca1973b1
+    [description] => Reserva Restaurante
+    [installments] => 1
+    [payment_method_id] => visa
+    [payer] => Array
+        (
+            [email] => test_user_1379908373@testuser.com
+            [first_name] => Hector
+            [last_name] => Montenegro
+            [identification] => Array
+                (
+                    [type] => DNI
+                    [number] => 12345678
+                )
+
+        )
+
+)

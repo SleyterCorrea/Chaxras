@@ -1,0 +1,172 @@
+/* -------------------- FOOTER -------------------- */
+/*------------------------------------------------- */
+.footer{
+    font-family: "Montserrat", serif;
+    background: #00695c;
+    color: #FFFFFF;
+    padding: 50px 20px;
+    margin-top: 5rem;
+}
+
+.footer-container{
+    display: flex; /* Distribución en línea */
+    flex-wrap: wrap; /* Permite ajustar elementos en varias líneas */
+    justify-content: space-between; /* Espaciado uniforme entre elementos */
+    gap: 20px; /* Espacio entre elementos */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+.footer-brand{
+    flex: 1; /* Toma espacio proporcional disponible */
+    text-align: center; /* Centra el contenido */
+    max-width: 150px;
+}
+
+.footer-brand img{
+    max-width: 70%;
+}
+
+.footer-brand hr{
+    border: 1px solid #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.footer-brand h4{
+    font-size: 1rem;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.payment-methods{
+    display: flex; /* Elementos en línea */
+    flex-wrap: wrap; /* Permite ajustar en varias líneas */
+    justify-content: center; /* Centra los iconos */
+    gap: 15px; /* Espacio entre iconos */
+    font-size: 2.2rem; /* Tamaño de los iconos */
+}
+
+.payment-methods i{
+    color: #FFFFFF;;
+    display: flex; /* Habilita flexbox */
+    cursor: pointer; /* Cursor de mano al pasar sobre los iconos */
+}
+
+
+.footer-section{
+    flex: 1;
+    max-width: 200px;
+}
+
+.footer-section h4{
+    font-size: 1.2rem; /* Tamaño del título */
+    font-weight: 600; /* Grosor de la fuente */
+    margin: 15px 0; /* Separación superior e inferior */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+.footer-section ul{
+    list-style: none; /* Elimina las viñetas de la lista */
+    padding: 0; /* Elimina padding */
+}
+
+.footer-section ul li{
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li:hover{
+    text-decoration: underline; /* Sube una línea al pasar el mouse */
+}
+
+.footer-section p{
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.social-icons{
+    display: flex;
+    gap: 15px;
+    font-size: 2rem;
+}
+
+.social-icons a{
+    color: #FFFFFF;
+}
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 10px;
+}
+
+.footer-bottom p{
+    font-size: 1rem;
+}
+
+
+@media(max-width:768px){
+.delivery-section {
+    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+}
+
+.delivery-content,
+.delivery-image {
+    text-align: center; /* Centra el contenido */
+}
+
+.delivery-image img {
+    max-width: 60%; /* Reduce el tamaño de la imagen */
+}
+
+.footer{
+    padding: 30px 0px;
+}
+
+.footer-container{
+    flex-wrap: nowrap; /* Deshabilita el ajuste automático */
+    flex-direction: column; /* Alinea los cuadros en una columna vertical */
+    align-items: center; /* Centra los elementos */
+    text-align: center; /* Centra el texto */
+}
+
+.footer-brand{
+    max-width: none; /* Permite que ocupe todo el ancho disponible */
+}
+
+.footer-brand h4{
+    font-size: 1.8rem; /* Aumenta el tamaño de fuente */
+}
+
+.payment-methods{
+    font-size: 4rem; /* Incrementa el tamaño de los iconos */
+}
+
+.footer-section{
+    max-width: none; /* Permite que ocupe todo el ancho disponible */
+}
+
+.social-icons{
+    justify-content: center; /* Centra los iconos */
+}
+}
+
+@media (max-width: 480px){
+.carrusel-item {
+    flex: 0 0 90%; /* Se muestra 1 cuadro visible */
+}
+
+.delivery-content h2{
+    font-size: 1.4em; /* Ajusta el tamaño del texto en móviles */
+}
+
+.delivery-button{
+    font-size: 14px; /* Botón más pequeño */
+}
+
+.delivery-image img{
+    max-width: 80%; /* Más ajuste para móviles */}
+}

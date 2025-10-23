@@ -1,0 +1,81 @@
+.platos-wrapper {
+    margin-left: 270px;
+    padding: 40px;
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+
+.titulo-seccion {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #263238;
+    font-weight: 600;
+}
+
+.botonera-top {
+    margin-bottom: 20px;
+    text-align: right;
+}
+.btn-nuevo {
+    background: #4caf50;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-nuevo:hover {
+    background: #388e3c;
+}
+
+.tabla-platos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.tabla-platos th, .tabla-platos td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.tabla-platos th {
+    background: #37474f;
+    color: white;
+}
+.tabla-platos tbody tr:hover {
+    background: #f0f0f0;
+}
+img.plato-thumb {
+    max-width: 80px;
+    border-radius: 8px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+.badge.activo {
+    background: #4caf50;
+}
+.badge.inactivo {
+    background: #f44336;
+}
+
+.btn-editar {
+    background: #2196f3;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.btn-editar:hover {
+    background: #1976d2;
+}

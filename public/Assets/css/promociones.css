@@ -1,0 +1,445 @@
+    :root {
+        --verde-principal: #00695c;
+        --gris-claro: #f5f5f5;
+        --gris-medio: #e0e0e0;
+        --negro: #212121;
+        --blanco: #ffffff;
+        --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
+        --sombra-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+        --border-radius: 12px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --verde-claro: #4db6ac;
+        --verde-oscuro: #004d40;
+        --amarillo-acento: #ffc107;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: var(--blanco);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--negro);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        margin-top: 3rem;
+    }
+    
+    .promociones-page {
+        padding: 40px 20px;
+        min-height: calc(100vh - 200px);
+    }
+    
+    .promociones-page h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--verde-principal);
+        margin-bottom: 50px;
+        position: relative;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .promociones-page h1::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--verde-principal), var(--verde-claro));
+        border-radius: 2px;
+    }
+    
+    /* Alerta de información */
+    .alert {
+        padding: 20px 25px;
+        margin-bottom: 40px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--sombra);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .alert::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 4px;
+        background: var(--verde-principal);
+    }
+    
+    .alert-info {
+        background: linear-gradient(135deg, #e8f5e8, #f0f9f0);
+        border: 1px solid var(--verde-claro);
+        color: var(--verde-oscuro);
+        font-size: 1.1rem;
+    }
+    
+    .alert i {
+        margin-right: 12px;
+        font-size: 1.2rem;
+        color: var(--verde-principal);
+    }
+    
+    .alert a {
+        color: var(--verde-principal);
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        transition: var(--transition);
+    }
+    
+    .alert a:hover {
+        color: var(--verde-oscuro);
+        border-bottom-color: var(--verde-principal);
+    }
+    
+    /* Grid de promociones */
+    .promos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 3rem;
+    }
+    
+    /* Tarjetas de promociones */
+    .promo-card {
+        background: var(--blanco);
+        border-radius: var(--border-radius);
+        padding: 35px;
+        box-shadow: var(--sombra);
+        transition: var(--transition);
+        position: relative;
+        border: 2px solid transparent;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .promo-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, var(--verde-principal), var(--verde-claro));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: var(--transition);
+    }
+    
+    .promo-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    .promo-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--sombra-hover);
+        border-color: var(--verde-claro);
+    }
+    
+    .promo-card.activo {
+        border-color: var(--verde-principal);
+        background: linear-gradient(135deg, #ffffff, #f8fff8);
+        position: relative;
+    }
+    
+    .promo-card.activo::before {
+        transform: scaleX(1);
+    }
+    
+    .promo-card.activo::after {
+        content: '✓ Activa';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--verde-principal);
+        color: var(--blanco);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 105, 92, 0.3);
+    }
+    
+    .promo-card h2 {
+        color: var(--verde-principal);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .promo-card h2::before {
+        content: '🎉';
+        font-size: 1.5rem;
+        animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        }
+        40% {
+        transform: translateY(-5px);
+        }
+        60% {
+        transform: translateY(-3px);
+        }
+    }
+    
+    .promo-card p {
+        color: var(--negro);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+    
+    /* Badge de status */
+    .badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--amarillo-acento), #ffb300);
+        color: var(--negro);
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 3rem;
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        animation: pulse 2s infinite;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        animation: shine 3s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+    }
+    
+    @keyframes shine {
+        0% {
+        left: -100%;
+        }
+        100% {
+        left: 100%;
+        }
+    }
+    
+    /* Formularios y botones */
+    .promo-card form {
+        margin-top: 25px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, var(--verde-principal), var(--verde-claro));
+        color: var(--blanco);
+        box-shadow: 0 4px 15px rgba(0, 105, 92, 0.3);
+    }
+    
+    .btn-primary:hover {
+        background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-principal));
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 105, 92, 0.4);
+    }
+    
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: var(--transition);
+    }
+    
+    .btn:hover::before {
+        left: 100%;
+    }
+    
+    /* Efectos especiales para promociones específicas */
+    .promo-card:nth-child(1) {
+        background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    }
+    
+    .promo-card:nth-child(2) {
+        background: linear-gradient(135deg, #ffffff, #f8f0ff);
+    }
+    
+    .promo-card:nth-child(3) {
+        background: linear-gradient(135deg, #ffffff, #fff8f0);
+    }
+    
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .promociones-page {
+        padding: 30px 15px;
+        }
+        
+        .promociones-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        }
+        
+        .promos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+        }
+        
+        .promo-card {
+        padding: 25px;
+        }
+        
+        .promo-card h2 {
+        font-size: 1.6rem;
+        }
+        
+        .badge {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        }
+        
+        .btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 1rem;
+        }
+        
+        .alert {
+        padding: 18px 20px;
+        margin-bottom: 30px;
+        font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .container {
+        padding: 0 15px;
+        }
+        
+        .promociones-page h1 {
+        font-size: 2rem;
+        }
+        
+        .promo-card {
+        padding: 20px;
+        }
+        
+        .promo-card h2 {
+        font-size: 1.4rem;
+        gap: 8px;
+        }
+        
+        .promo-card h2::before {
+        font-size: 1.2rem;
+        }
+        
+        .promo-card p {
+        font-size: 1rem;
+        }
+    }
+    
+    /* Animaciones adicionales */
+    .promo-card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .promo-card:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    
+    .promo-card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .promo-card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+        opacity: 0;
+        transform: translateY(30px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+    
+    /* Estados de hover mejorados */
+    .promo-card:hover h2 {
+        color: var(--verde-oscuro);
+    }
+    
+    .promo-card:hover .badge {
+        transform: scale(1.05);
+    }
+    
+    /* Indicador visual para promociones disponibles */
+    .promo-card:not(.activo):hover {
+        background: linear-gradient(135deg, #ffffff, #f0fff0);
+    }
+    
+    /* Mejoras en accesibilidad */
+    .btn:focus {
+        outline: 3px solid var(--verde-claro);
+        outline-offset: 2px;
+    }
+    
+    .promo-card:focus-within {
+        border-color: var(--verde-principal);
+        box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.1);
+    }

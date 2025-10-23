@@ -1,7 +1,8 @@
 version = 1
 
 exclude_patterns = [
-  "vendor"
+  "vendor",
+  "fpdf"
 ]
 
 [[analyzers]]

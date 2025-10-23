@@ -1,19 +1,9 @@
 version = 1
 
-test_patterns = [
-  "\"app/Vistas/**\",",
-  "    \"app/Controladores/**\",",
-  "    \"app/Modelos/**\" "
-]
-
-exclude_patterns = [
-  "    \"vendor/**\",",
-  "    \"node_modules/**\",",
-  "    \"public/**\",",
-  "    \"config/**\",",
-  "    \"storage/**\",",
-  "    \"tests/**\"  "
-]
+exclude_patterns = ["vendor"]
 
 [[analyzers]]
 name = "php"
+
+  [analyzers.meta]
+  bootstrap_files = ["app/Vistas"]

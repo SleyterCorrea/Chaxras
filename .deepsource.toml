@@ -1,28 +1,7 @@
 version = 1
 
-# === Analizador principal PHP ===
 [[analyzers]]
 name = "php"
 
   [analyzers.meta]
-  # Archivos a incluir en el análisis
-  include_patterns = [
-    "app/Vistas/**",         # Análisis funcional (vistas del sistema)
-    "app/Controladores/**",  # Análisis no funcional (controladores)
-    "app/Modelos/**"         # Análisis no funcional (modelos)
-  ]
-
-  # Archivos y carpetas a excluir del análisis
-  exclude_patterns = [
-    "vendor/**",         # Dependencias externas de Composer
-    "node_modules/**",   # Si existiera frontend compilado
-    "public/**",         # Archivos estáticos (CSS, JS, imágenes)
-    "config/**",         # Configuración del sistema (no necesita revisión)
-    "storage/**",        # Archivos temporales o logs
-    "tests/**"           # Tests automáticos (si los hubiera)
-  ]
-
-# === Opcional: reglas para reducir falsos positivos ===
-[[transformers]]
-name = "php-format"
-enabled = true
+  bootstrap_files = ["vistas"]
